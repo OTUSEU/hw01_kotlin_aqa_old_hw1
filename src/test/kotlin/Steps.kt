@@ -2,18 +2,24 @@ class Steps {
 
 
     fun afterTest() {
-        println("After Test")
+        println()
+        println("After test...")
+        println()
     }
 
     fun beforeTest() {
-        println("Before Test")
+        println()
+        println("Before test...")
+        println()
     }
 }
 
-fun testRun(){
-    println("Test run")
+fun test(){
+    println()
+    println("Test run...")
+    println()
 }
 
 fun main() {
-    TestRun().runTest(steps = Steps(), test =  { testRun() })
+    TestRun().runTest(steps = Steps(), test =  { test() })
 }
