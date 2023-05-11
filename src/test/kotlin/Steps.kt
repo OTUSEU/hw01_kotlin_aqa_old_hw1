@@ -1,25 +1,49 @@
 class Steps {
 
-
     fun afterTest() {
-        println()
         println("After test...")
-        println()
     }
 
     fun beforeTest() {
-        println()
         println("Before test...")
-        println()
     }
+}
+class Steps2 {
+    fun beforeTest2() {
+        println("Before test2...")
+    }
+
+    fun afterTest1() {
+        println("After test1...")
+    }
+
+    fun beforeTest1() {
+        println("Before test1...")
+    }
+    fun afterTest2() {
+        println("After test...")
+    }
+}
+class Steps3 {
+
 }
 
 fun test(){
-    println()
     println("Test run...")
-    println()
 }
 
+/**
+ * Не применен DSL - стоит обычный вызов
+ *
+ */
 fun main() {
+    println("=======================================")
     TestRun().runTest(steps = Steps(), test =  { test() })
+    // Можно так - вынести за скобки последний аргумент - будет более Котлин
+    println("=======================================")
+    TestRun().runTest(steps = Steps())   { test() }
+    println("=======================================")
+    TestRun().runTest(steps = Steps2())   { test() }
+    println("=======================================")
+    TestRun().runTest(steps = Steps3())   { test() }
 }
